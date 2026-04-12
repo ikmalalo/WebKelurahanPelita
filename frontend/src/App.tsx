@@ -64,7 +64,10 @@ function App() {
             if (id === 'qris') navigate('/materi-detail', { state: { from: 'home' } });
             else navigate('/materi');
           }} />
-          <CtaBanner />
+          <CtaBanner 
+            onDaftarClick={() => window.open('https://wa.me/6282357214445?text=Halo,%20saya%20ingin%20mendaftarkan%20UMKM%20saya%20di%20Kelurahan%20Pelita', '_blank')}
+            onConsultationClick={() => navigate('/helpdesk')}
+          />
           <Location />
         </PublicLayout>
       } />

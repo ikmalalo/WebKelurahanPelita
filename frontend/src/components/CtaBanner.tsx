@@ -1,6 +1,11 @@
 import './CtaBanner.css'
 
-export function CtaBanner() {
+interface CtaBannerProps {
+  onDaftarClick?: () => void
+  onConsultationClick?: () => void
+}
+
+export function CtaBanner({ onDaftarClick, onConsultationClick }: CtaBannerProps) {
   return (
     <section className="cta" id="umkm">
       <div className="container">
@@ -12,8 +17,8 @@ export function CtaBanner() {
             </p>
           </div>
           <div className="cta-actions">
-            <button className="btn-accent">Daftar Program</button>
-            <button className="btn-outline-white">Konsultasi Gratis</button>
+            <button className="btn-accent" onClick={onDaftarClick}>Daftar UMKM</button>
+            <button className="btn-outline-white" onClick={onConsultationClick}>Konsultasi Gratis</button>
           </div>
         </div>
       </div>
