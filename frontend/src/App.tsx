@@ -13,6 +13,7 @@ import { SemuaPertanyaan } from './pages/SemuaPertanyaan'
 import { DirektoriPage } from './pages/DirektoriPage'
 import { MateriPage } from './pages/MateriPage'
 import { MateriDetailPage } from './pages/MateriDetailPage'
+import { CanvaMateriPage } from './pages/CanvaMateriPage'
 import LoginPage from './pages/LoginPage'
 import AdminDashboard from './pages/AdminDashboard'
 import AdminHelpdesk from './pages/AdminHelpdesk'
@@ -62,6 +63,7 @@ function App() {
           />
           <Programs onProgramClick={(id) => {
             if (id === 'qris') navigate('/materi-detail', { state: { from: 'home' } });
+            else if (id === 'canva-ai') navigate('/materi/canva-ai', { state: { from: 'home' } });
             else navigate('/materi');
           }} />
           <CtaBanner 
@@ -88,12 +90,23 @@ function App() {
         <PublicLayout activePage="materi">
           <MateriPage onMaterialClick={(id) => {
             if (id === 3) navigate('/materi-detail', { state: { from: 'materi' } });
+            else if (id === 5) navigate('/materi/canva-ai', { state: { from: 'materi' } });
           }} />
         </PublicLayout>
       } />
 
       <Route path="/materi-detail" element={
         <MateriDetailPage 
+          onBack={() => {
+            const from = location.state?.from || 'home';
+            navigate(from === 'materi' ? '/materi' : '/');
+          }} 
+          from={location.state?.from || 'home'}
+        />
+      } />
+
+      <Route path="/materi/canva-ai" element={
+        <CanvaMateriPage 
           onBack={() => {
             const from = location.state?.from || 'home';
             navigate(from === 'materi' ? '/materi' : '/');
