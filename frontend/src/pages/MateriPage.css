@@ -1,0 +1,249 @@
+.materi-page {
+  padding: 80px 0;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+.materi-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.materi-header {
+  margin-bottom: 50px;
+}
+
+.materi-sub-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.materi-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+}
+
+.materi-subtitle {
+  font-size: 16px;
+  color: #64748b;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* Filters */
+.materi-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.materi-filter-btn {
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #f1f5f9;
+  border: 1px solid transparent;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.materi-filter-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.materi-filter-btn.active {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.materi-filter-btn svg {
+  opacity: 0.7;
+}
+
+.materi-filter-btn.active svg {
+  opacity: 1;
+}
+
+/* Grid */
+.materi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+/* Card */
+.materi-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #f1f5f9;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.materi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: #e2e8f0;
+}
+
+.materi-img-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+.materi-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.materi-card:hover .materi-img {
+  transform: scale(1.05);
+}
+
+.materi-badge {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: #2563eb;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+/* Specific badge colors */
+.materi-badge.ai-tools { background: #7c3aed; box-shadow: 0 4px 10px rgba(124, 58, 237, 0.3); }
+.materi-badge.marketplace { background: #2563eb; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3); }
+.materi-badge.payments { background: #0891b2; box-shadow: 0 4px 10px rgba(8, 145, 178, 0.3); }
+.materi-badge.visibility { background: #059669; box-shadow: 0 4px 10px rgba(5, 150, 105, 0.3); }
+.materi-badge.content { background: #ea580c; box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3); }
+
+.materi-content {
+  padding: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.materi-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.materi-card-desc {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.materi-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.materi-read-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.materi-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.materi-btn:hover {
+  background: #1d4ed8;
+  transform: translateX(2px);
+}
+
+
+
+/* Response */
+@media (max-width: 900px) {
+  .materi-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .materi-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .materi-page {
+    padding: 60px 0;
+  }
+  .materi-container {
+    padding: 0 20px;
+  }
+  .materi-title {
+    font-size: 28px;
+  }
+  .materi-header {
+    margin-bottom: 40px;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .materi-content {
+    padding: 24px;
+  }
+  .materi-card-title {
+    font-size: 20px;
+  }
+  .materi-filter-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}

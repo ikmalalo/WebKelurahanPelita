@@ -1,0 +1,123 @@
+.programs {
+  background: var(--bg);
+  border-top: 1px solid var(--border-light);
+}
+
+.programs-header {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 48px;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 24px;
+}
+
+/* Mengatur posisi 5 children menggunakan nth-child */
+.program-card:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+.program-card:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+.program-card:nth-child(3) {
+  /* Card utama di tengah, span 2 bars (atas ke bawah) */
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center; /* Membuat tingginya natural dan diletakkan di tengah */
+  transform: scale(1.02);
+}
+.program-card:nth-child(3):hover {
+  transform: scale(1.04);
+}
+
+.program-card:nth-child(4) {
+  grid-column: 3;
+  grid-row: 1;
+}
+.program-card:nth-child(5) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.program-card {
+  background: #ffffff;
+  border: 1px solid rgba(59, 130, 246, 0.2); /* Biru super tipis pengganti border default */
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.12); /* Efek glow biru awal */
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.program-card:hover {
+  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.35); /* Glow membesar/lebih tajam pas di-hover */
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.5); /* Tepi biru lebih muncul */
+}
+
+.program-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.program-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+}
+
+.program-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.program-link {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: opacity 0.2s, gap 0.2s;
+  margin-top: 4px;
+}
+.program-link:hover { opacity: 0.75; }
+
+@media (max-width: 1024px) {
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  .program-card:nth-child(3) {
+    /* Reset gaya card tengah untuk mode responsive (tablet) */
+    grid-column: 1 / span 2;
+    grid-row: auto;
+    transform: none;
+  }
+  .program-card:nth-child(1),
+  .program-card:nth-child(2),
+  .program-card:nth-child(4),
+  .program-card:nth-child(5) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .programs-grid { grid-template-columns: 1fr; }
+  .programs-header { margin-bottom: 32px; }
+  .program-card:nth-child(3) { grid-column: auto; }
+}
