@@ -53,7 +53,13 @@ function App() {
       {/* Public Routes */}
       <Route path="/" element={
         <PublicLayout activePage="home">
-          <Hero />
+          <Hero 
+            onDirektoriClick={() => navigate('/direktori')}
+            onProgramClick={() => {
+              const element = document.getElementById('program');
+              if (element) element.scrollIntoView({ behavior: 'smooth' });
+            }}
+          />
           <Programs onProgramClick={(id) => {
             if (id === 'qris') navigate('/materi-detail', { state: { from: 'home' } });
             else navigate('/materi');

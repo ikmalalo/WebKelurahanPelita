@@ -1,6 +1,11 @@
 import './Hero.css'
 
-export function Hero() {
+interface HeroProps {
+  onDirektoriClick?: () => void
+  onProgramClick?: () => void
+}
+
+export function Hero({ onDirektoriClick, onProgramClick }: HeroProps) {
   return (
     <section className="hero" id="beranda">
       <div className="container hero-inner">
@@ -19,8 +24,8 @@ export function Hero() {
           </p>
 
           <div className="hero-actions">
-            <button className="btn-primary hero-btn-lg">Pelajari Program</button>
-            <button className="btn-outline hero-btn-lg">Lihat Direktori</button>
+            <button className="btn-primary hero-btn-lg" onClick={onProgramClick}>Pelajari Program</button>
+            <button className="btn-outline hero-btn-lg" onClick={onDirektoriClick}>Lihat Direktori</button>
           </div>
         </div>
 
