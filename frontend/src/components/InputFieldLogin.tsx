@@ -1,6 +1,15 @@
-import { useState } from "react";
+import { useState, ReactNode, ChangeEvent } from "react";
 
-export default function InputField({ label, type = "text", placeholder, icon, value, onChange }) {
+interface InputFieldProps {
+  label: string;
+  type?: string;
+  placeholder?: string;
+  icon?: ReactNode;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+}
+
+export default function InputField({ label, type = "text", placeholder, icon, value, onChange }: InputFieldProps) {
   const [focused, setFocused] = useState(false);
   const [hovered, setHovered] = useState(false);
 

@@ -1,20 +1,29 @@
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 
-export default function LoginButton({ children, onClick }) {
+interface LoginButtonProps {
+  children: ReactNode;
+  onClick: () => void;
+  disabled?: boolean;
+}
+
+export default function LoginButton({ children, onClick, disabled }: LoginButtonProps) {
   const [hovered, setHovered] = useState(false);
   const [pressed, setPressed] = useState(false);
 
   return (
     <button
       onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
+      disabled={disabled}
+      onMouseEnter={() => !disabled && setHovered(true)}
       onMouseLeave={() => { setHovered(false); setPressed(false); }}
-      onMouseDown={() => setPressed(true)}
+      onMouseDown={() => !disabled && setPressed(true)}
       onMouseUp={() => setPressed(false)}
       style={{
         width: "100%",
         padding: "15px 24px",
-        background: pressed
+        background: disabled
+          ? "#BDC3C7"
+          : pressed
           ? "linear-gradient(135deg, #1D4ED8 0%, #1E40AF 100%)"
           : hovered
           ? "linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%)"
@@ -26,12 +35,15 @@ export default function LoginButton({ children, onClick }) {
         fontWeight: "700",
         fontFamily: "'DM Sans', sans-serif",
         letterSpacing: "0.04em",
-        cursor: "pointer",
+        cursor: disabled ? "not-allowed" : "pointer",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         gap: "10px",
-        boxShadow: pressed
+        opacity: disabled ? 0.7 : 1,
+        boxShadow: disabled
+          ? "none"
+          : pressed
           ? "0 2px 8px rgba(37,99,235,0.25)"
           : hovered
           ? "0 8px 24px rgba(37,99,235,0.45), 0 2px 8px rgba(37,99,235,0.2)"
