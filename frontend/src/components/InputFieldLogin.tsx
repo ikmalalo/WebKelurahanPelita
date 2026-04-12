@@ -1,4 +1,5 @@
-import { useState, ReactNode, ChangeEvent } from "react";
+import { useState } from "react";
+import type { ReactNode, ChangeEvent } from "react";
 
 interface InputFieldProps {
   label: string;
