@@ -169,7 +169,7 @@ export function DirektoriPage() {
                 {cat === "Dessert" && (
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
                 )}
-                {cat === "Drink" && (
+                {cat === "Minuman" && (
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 22l-1.2-3h-7.6l-1.2 3"/><path d="M18 10H6l1 12h10l1-12z"/><path d="m6 10 1-5h10l1 5"/><path d="M10 5l1-3h2l1 3"/></svg>
                 )}
                 {cat}

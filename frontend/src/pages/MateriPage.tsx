@@ -52,13 +52,13 @@ const materials: Material[] = [
 ]
 
 const categories = [
-  { id: 'All Topics', name: 'All Topics', icon: (
+  { id: 'Semua Materi', name: 'Semua Materi', icon: (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
   )},
-  { id: 'AI Tools', name: 'AI Tools', icon: (
+  { id: 'AI Tools', name: 'Alat AI', icon: (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 22 4-10 4 10"/><path d="M9 18h6"/></svg>
   )},
-  { id: 'Payments', name: 'Payments', icon: (
+  { id: 'Payments', name: 'Pembayaran', icon: (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
   )}
 ]
@@ -68,10 +68,10 @@ interface MateriPageProps {
 }
 
 export function MateriPage({ onMaterialClick }: MateriPageProps) {
-  const [activeTab, setActiveTab] = useState('All Topics')
+  const [activeTab, setActiveTab] = useState('Semua Materi')
 
   const filtered = materials.filter(m => 
-    activeTab === 'All Topics' ? true : m.category === activeTab
+    activeTab === 'Semua Materi' ? true : m.category === activeTab
   )
 
   return (
@@ -83,11 +83,11 @@ export function MateriPage({ onMaterialClick }: MateriPageProps) {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
               <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
             </svg>
-            Learning Catalog
+            Katalog Pembelajaran
           </div>
-          <h1 className="materi-title">Training Materials</h1>
+          <h1 className="materi-title">Materi Pelatihan</h1>
           <p className="materi-subtitle">
-            Empower your UMKM business with digital skills. Our curated materials cover everything from branding to digital payments.
+            Perkuat bisnis UMKM dengan keterampilan digital. Materi pilihan yang disediakan mencakup segala hal mulai dari branding hingga pembayaran digital.
           </p>
         </header>
 
@@ -125,7 +125,7 @@ export function MateriPage({ onMaterialClick }: MateriPageProps) {
                     className="materi-btn"
                     onClick={() => onMaterialClick && onMaterialClick(mat.id)}
                   >
-                    Read More 
+                    Buka Materi 
                     <svg style={{ marginLeft: '6px' }} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
                     </svg>
