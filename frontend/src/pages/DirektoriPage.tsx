@@ -15,7 +15,7 @@ interface Business {
 
 // Data statis dipindahkan ke database Supabase
 
-const categories = ["Semua", "Makanan Berat", "Makanan Ringan", "Dessert", "Drink"]
+const categories = ["Semua", "Makanan Berat", "Makanan Ringan", "Dessert", "Minuman"]
 
 interface ModalProps {
   business: Business | null
@@ -121,7 +121,7 @@ export function DirektoriPage() {
         const mappedData: Business[] = data.map(item => ({
           id: item.id,
           name: item.nama,
-          category: item.kategori,
+          category: item.kategori === 'Drink' ? 'Minuman' : item.kategori,
           address: item.lokasi,
           description: item.deskripsi,
           image: item.foto || 'https://images.unsplash.com/photo-1516762689617-e1cff9ee739e?auto=format&fit=crop&q=80&w=400',
