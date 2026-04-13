@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './MateriDetailPage.css'
+import qrisImg from '../assets/images/qris-materi.png'
 
 interface MateriDetailPageProps {
   onBack: () => void
@@ -98,7 +99,7 @@ export function MateriDetailPage({ onBack, from = 'home' }: MateriDetailPageProp
         <div className="md-content">
           <section className="md-hero">
             <img 
-              src="https://images.unsplash.com/photo-1595079676339-1534802ad6cf?auto=format&fit=crop&q=80&w=1200" 
+              src={qrisImg} 
               alt="QRIS Implementation" 
               className="md-hero-img" 
             />
@@ -235,13 +236,6 @@ export function MateriDetailPage({ onBack, from = 'home' }: MateriDetailPageProp
               <div className="md-related-info">
                 <h5>Meningkatkan Branding UMKM dengan AI</h5>
                 <span className="md-related-meta">AI Tools • 15 Menit</span>
-              </div>
-            </div>
-            <div className="md-related-item">
-              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=150" alt="Marketplace" className="md-related-img" />
-              <div className="md-related-info">
-                <h5>Pemanfaatan Marketplace untuk Penjualan</h5>
-                <span className="md-related-meta">Marketplace • 18 Menit</span>
               </div>
             </div>
             <div className="md-related-item">

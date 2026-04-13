@@ -468,20 +468,49 @@
 
 /* Help Card */
 .md-help-card {
-  background: #00c4cc;
+  background: linear-gradient(135deg, #00c4cc 0%, #00a4ad 100%);
   color: white;
   border: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.md-help-card::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.md-help-icon-wrap {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: white;
 }
 
 .md-help-card .md-side-title {
   color: white;
+  margin-bottom: 12px;
+  font-size: 16px;
 }
 
 .md-help-desc {
   font-size: 13px;
   opacity: 0.9;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .md-mentor-btn {
@@ -494,6 +523,17 @@
   font-weight: 700;
   font-size: 14px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.md-mentor-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsiveness */

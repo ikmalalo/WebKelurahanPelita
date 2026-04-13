@@ -43,15 +43,16 @@ export function Location() {
         </div>
 
         <div className="location-map">
-          <div className="map-placeholder">
-            <div className="map-pin">
-              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-            </div>
-            <p className="map-label">Peta Kelurahan Pelita</p>
-          </div>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.4186595508819!2d117.15833486955054!3d-0.4865773998632662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df67f7127ecb8fd%3A0xa5a54acfa3871050!2sKantor+Kelurahan+Pelita!5e0!3m2!1sid!2sid!4v1776048409477!5m2!1sid!2sid"
+            width="100%" 
+            height="400" 
+            style={{ border: 0 }} 
+            allowFullScreen={true} 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Lokasi Kantor Kelurahan Pelita"
+          ></iframe>
         </div>
       </div>
     </section>

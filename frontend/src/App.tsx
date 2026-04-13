@@ -14,6 +14,9 @@ import { DirektoriPage } from './pages/DirektoriPage'
 import { MateriPage } from './pages/MateriPage'
 import { MateriDetailPage } from './pages/MateriDetailPage'
 import { CanvaMateriPage } from './pages/CanvaMateriPage'
+import { BrandingMateriPage } from './pages/BrandingMateriPage'
+import { QrisMateriPage } from './pages/QrisMateriPage'
+import { GoogleMapsMateriPage } from './pages/GoogleMapsMateriPage'
 import LoginPage from './pages/LoginPage'
 import AdminDashboard from './pages/AdminDashboard'
 import AdminHelpdesk from './pages/AdminHelpdesk'
@@ -62,8 +65,10 @@ function App() {
             }}
           />
           <Programs onProgramClick={(id) => {
-            if (id === 'qris') navigate('/materi-detail', { state: { from: 'home' } });
+            if (id === 'qris') navigate('/materi/qris', { state: { from: 'home' } });
             else if (id === 'canva-ai') navigate('/materi/canva-ai', { state: { from: 'home' } });
+            else if (id === 'ai-branding') navigate('/materi/branding-ai', { state: { from: 'home' } });
+            else if (id === 'gmaps') navigate('/materi/google-maps', { state: { from: 'home' } });
             else navigate('/materi');
           }} />
           <CtaBanner 
@@ -89,7 +94,9 @@ function App() {
       <Route path="/materi" element={
         <PublicLayout activePage="materi">
           <MateriPage onMaterialClick={(id) => {
-            if (id === 3) navigate('/materi-detail', { state: { from: 'materi' } });
+            if (id === 1) navigate('/materi/branding-ai', { state: { from: 'materi' } });
+            else if (id === 3) navigate('/materi/qris', { state: { from: 'materi' } });
+            else if (id === 4) navigate('/materi/google-maps', { state: { from: 'materi' } });
             else if (id === 5) navigate('/materi/canva-ai', { state: { from: 'materi' } });
           }} />
         </PublicLayout>
@@ -107,6 +114,36 @@ function App() {
 
       <Route path="/materi/canva-ai" element={
         <CanvaMateriPage 
+          onBack={() => {
+            const from = location.state?.from || 'home';
+            navigate(from === 'materi' ? '/materi' : '/');
+          }} 
+          from={location.state?.from || 'home'}
+        />
+      } />
+
+      <Route path="/materi/branding-ai" element={
+        <BrandingMateriPage 
+          onBack={() => {
+            const from = location.state?.from || 'home';
+            navigate(from === 'materi' ? '/materi' : '/');
+          }} 
+          from={location.state?.from || 'home'}
+        />
+      } />
+
+      <Route path="/materi/qris" element={
+        <QrisMateriPage 
+          onBack={() => {
+            const from = location.state?.from || 'home';
+            navigate(from === 'materi' ? '/materi' : '/');
+          }} 
+          from={location.state?.from || 'home'}
+        />
+      } />
+
+      <Route path="/materi/google-maps" element={
+        <GoogleMapsMateriPage 
           onBack={() => {
             const from = location.state?.from || 'home';
             navigate(from === 'materi' ? '/materi' : '/');

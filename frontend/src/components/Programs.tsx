@@ -27,24 +27,9 @@ const programs = [
     iconColor: '#8b5cf6',
     iconBg: '#f5f3ff',
     title: 'Pembuatan Konten Promosi dengan Canva AI',
-    desc: 'Workshop praktis merancang visual pemasaran yang menarik dan efektif dengan fitur AI terbaru dari Canva.',
+    desc: 'Workshop praktis merancang visual pemasaran yang menarik and efektif dengan fitur AI terbaru dari Canva.',
     link: 'IKUTI WORKSHOP',
     linkColor: '#8b5cf6',
-  },
-  {
-    id: 'marketplace',
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
-        <polyline points="9 22 9 12 15 12 15 22"/>
-      </svg>
-    ),
-    iconColor: '#10b981',
-    iconBg: '#ecfdf5',
-    title: 'Pemanfaatan Marketplace untuk Penjualan UMKM',
-    desc: 'Strategi optimalisasi toko online di berbagai platform marketplace untuk memperluas jangkauan dan meningkatkan penjualan.',
-    link: 'DAFTAR SEKARANG',
-    linkColor: '#10b981',
   },
   {
     id: 'qris',

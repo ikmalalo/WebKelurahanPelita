@@ -11,38 +11,8 @@
 
 .programs-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
-}
-
-/* Mengatur posisi 5 children menggunakan nth-child */
-.program-card:nth-child(1) {
-  grid-column: 1;
-  grid-row: 1;
-}
-.program-card:nth-child(2) {
-  grid-column: 1;
-  grid-row: 2;
-}
-.program-card:nth-child(3) {
-  /* Card utama di tengah, span 2 bars (atas ke bawah) */
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  align-self: center; /* Membuat tingginya natural dan diletakkan di tengah */
-  transform: scale(1.02);
-}
-.program-card:nth-child(3):hover {
-  transform: scale(1.04);
-}
-
-.program-card:nth-child(4) {
-  grid-column: 3;
-  grid-row: 1;
-}
-.program-card:nth-child(5) {
-  grid-column: 3;
-  grid-row: 2;
 }
 
 .program-card {
@@ -99,25 +69,14 @@
 @media (max-width: 1024px) {
   .programs-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-  }
-  .program-card:nth-child(3) {
-    /* Reset gaya card tengah untuk mode responsive (tablet) */
-    grid-column: 1 / span 2;
-    grid-row: auto;
-    transform: none;
-  }
-  .program-card:nth-child(1),
-  .program-card:nth-child(2),
-  .program-card:nth-child(4),
-  .program-card:nth-child(5) {
-    grid-column: auto;
-    grid-row: auto;
   }
 }
 
 @media (max-width: 768px) {
-  .programs-grid { grid-template-columns: 1fr; }
-  .programs-header { margin-bottom: 32px; }
-  .program-card:nth-child(3) { grid-column: auto; }
+  .programs-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .programs-header { 
+    margin-bottom: 32px; 
+  }
 }

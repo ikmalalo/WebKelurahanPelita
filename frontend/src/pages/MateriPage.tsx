@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './MateriPage.css'
+import qrisImg from '../assets/images/qris-materi.png'
 
 interface Material {
   id: number
@@ -22,22 +23,13 @@ const materials: Material[] = [
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800"
   },
   {
-    id: 2,
-    title: "Pemanfaatan Marketplace untuk Penjualan UMKM",
-    description: "Strategi jitu mengelola toko online di berbagai platform marketplace untuk menjangkau pasar yang lebih luas.",
-    category: "Marketplace",
-    badgeClass: "marketplace",
-    readTime: "18 min read",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800"
-  },
-  {
     id: 3,
     title: "Pelatihan QRIS",
     description: "Panduan lengkap implementasi sistem pembayaran digital QRIS untuk memudahkan transaksi di gerai UMKM Anda.",
     category: "Payments",
     badgeClass: "payments",
     readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1595079676339-1534802ad6cf?auto=format&fit=crop&q=80&w=800"
+    image: qrisImg
   },
   {
     id: 4,
@@ -65,9 +57,6 @@ const categories = [
   )},
   { id: 'AI Tools', name: 'AI Tools', icon: (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 22 4-10 4 10"/><path d="M9 18h6"/></svg>
-  )},
-  { id: 'Marketplace', name: 'Marketplace', icon: (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/><path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/><path d="M12 3v6"/></svg>
   )},
   { id: 'Payments', name: 'Payments', icon: (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
