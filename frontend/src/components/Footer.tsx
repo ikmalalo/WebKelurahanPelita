@@ -15,6 +15,10 @@ export function Footer() {
               </div>
               <div>
                 <span className="footer-brand-name">Kelurahan Pelita</span>
+                <p className="footer-address">
+                  Jl. Kyai H. Usman Ibrahim No.72, Pelita, Kec. Sungai Pinang, <br />
+                  Kota Samarinda, Kalimantan Timur 75117
+                </p>
               </div>
             </a>
           </div>

@@ -35,7 +35,16 @@
   font-size: 13px;
   font-weight: 700;
   color: var(--text-primary);
+  display: block;
 }
+
+.footer-address {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
 
 .footer-links {
   display: flex;
